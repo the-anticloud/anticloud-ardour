@@ -1,0 +1,1045 @@
+{
+  "schema": "anticloud.tier-bench/1",
+  "project": "ARDOUR",
+  "source": {
+    "repo_path": "E:\\fenta\\Downloads\\The Anticloud\\ANTICLOUD_REPOS\\AUDIO_CONSUMER\\ARDOUR\\UPSTREAM_CLONE",
+    "git": {
+      "head": "bf679081bafabf1bc16ee1f8ae8d01503ffe013e",
+      "url": "https://github.com/ardour/ardour",
+      "branch": "master",
+      "committed_at": "2026-10-02T01:01:40+02:00"
+    }
+  },
+  "metrics": {
+    "files_total": 6455,
+    "source_files_scanned": 4950,
+    "lines_of_code": 1869217,
+    "languages": {
+      ".h": 2486,
+      ".cc": 1432,
+      ".c": 542,
+      ".midnam": 472,
+      ".png": 237,
+      "(none)": 209,
+      ".lua": 180,
+      ".cpp": 152,
+      ".js": 100,
+      ".po": 77,
+      ".svg": 63,
+      ".map": 58,
+      ".css": 53,
+      ".in": 51,
+      ".device": 48
+    }
+  },
+  "licence": {
+    "spdx": "GPL-2.0",
+    "class": "B",
+    "source_file": "COPYING",
+    "redistribution_allowed": false
+  },
+  "dependencies": {
+    "count": 0,
+    "unique": 0,
+    "by_ecosystem": {},
+    "list": []
+  },
+  "owasp_top10": {
+    "total_findings": 1235,
+    "files_with_findings": 1081,
+    "severity": {
+      "high": 105,
+      "medium": 7,
+      "low": 1123
+    },
+    "categories": {
+      "A01-BrokenAccessControl": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "libs/pbd/ccurl.cc",
+            "line": 189,
+            "cwe": "CWE-295",
+            "snippet": "curl_easy_setopt (c, CURLOPT_SSL_VERIFYPEER, 0);"
+          }
+        ]
+      },
+      "A02-CryptographicFailures": {
+        "count": 8,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "libs/tk/ytk/ytk/gtkimcontextsimpleseqs.h",
+            "line": 1242,
+            "cwe": "CWE-327",
+            "snippet": "GDK_exclam, GDK_i, 0x1ECB,"
+          },
+          {
+            "severity": "high",
+            "file": "libs/tk/ydk/win32/gdkdisplay-win32.c",
+            "line": 366,
+            "cwe": "CWE-327",
+            "snippet": "case WM_CHANGECBCHAIN:"
+          },
+          {
+            "severity": "high",
+            "file": "libs/tk/ydk/win32/gdkmain-win32.c",
+            "line": 1038,
+            "cwe": "CWE-327",
+            "snippet": "CASE (WM_CHANGECBCHAIN);"
+          },
+          {
+            "severity": "medium",
+            "file": "libs/staffpad/TimeAndPitch.cpp",
+            "line": 47,
+            "cwe": "CWE-338",
+            "snippet": "void generateRandomPhaseVector(float* dst, size_t size, std::mt19937& gen)"
+          },
+          {
+            "severity": "medium",
+            "file": "libs/pbd/md5.cc",
+            "line": 85,
+            "cwe": "CWE-327",
+            "snippet": "MD5::MD5 ()"
+          },
+          {
+            "severity": "medium",
+            "file": "libs/pbd/pbd/md5.h",
+            "line": 36,
+            "cwe": "CWE-327",
+            "snippet": "MD5();"
+          },
+          {
+            "severity": "medium",
+            "file": "libs/ardour/session.cc",
+            "line": 5331,
+            "cwe": "CWE-327",
+            "snippet": "MD5 md5;"
+          },
+          {
+            "severity": "medium",
+            "file": "gtk2_ardour/luawindow.cc",
+            "line": 478,
+            "cwe": "CWE-327",
+            "snippet": "MD5 md5;"
+          }
+        ]
+      },
+      "A03-Injection": {
+        "count": 100,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "tools/autowaf.py",
+            "line": 630,
+            "cwe": "CWE-78",
+            "snippet": "if subprocess.call(cmd, shell=True) == desired_status:"
+          },
+          {
+            "severity": "high",
+            "file": "tools/list_scripts.lua",
+            "line": 6,
+            "cwe": "CWE-78",
+            "snippet": "local out = io.popen ("
+          },
+          {
+            "severity": "high",
+            "file": "tools/omf/loader.cc",
+            "line": 137,
+            "cwe": "CWE-120",
+            "snippet": "sprintf(error, \"Can't open database: %s\", sqlite3_errmsg(db));"
+          },
+          {
+            "severity": "high",
+            "file": "share/web_surfaces/builtin/mixer/toolkit/G.js",
+            "line": 167,
+            "cwe": "CWE-120",
+            "snippet": "return TK.sprintf(\"<frame: %d, prio: %d, cycle: %d>\","
+          },
+          {
+            "severity": "high",
+            "file": "share/web_surfaces/builtin/mixer/toolkit/toolkit.js",
+            "line": 709,
+            "cwe": "CWE-95",
+            "snippet": "while (res = regexp.exec(fmt)) {"
+          },
+          {
+            "severity": "high",
+            "file": "share/web_surfaces/builtin/mixer/toolkit/widgets/crossover.js",
+            "line": 146,
+            "cwe": "CWE-120",
+            "snippet": "* @property {Function} [label=function (t, x, y, z) { return TK.sprintf(\"%.2f Hz\", x); }] - The function formatting the handles label."
+          },
+          {
+            "severity": "high",
+            "file": "share/web_surfaces/builtin/mixer/toolkit/widgets/select.js",
+            "line": 111,
+            "cwe": "CWE-89",
+            "snippet": "* TK.Select provides a {@link TK.Button} with a select list to choose from"
+          },
+          {
+            "severity": "high",
+            "file": "share/web_surfaces/builtin/mixer/toolkit/widgets/window.js",
+            "line": 771,
+            "cwe": "CWE-95",
+            "snippet": "\"click\" : function (e) { (eval(name)).call(this.parent, e); },"
+          },
+          {
+            "severity": "high",
+            "file": "share/web_surfaces/builtin/mixer/toolkit/implements/gradient.js",
+            "line": 149,
+            "cwe": "CWE-120",
+            "snippet": "m_svg     += TK.sprintf(c_svg, ps, gradient[keys[i] + \"\"]);"
+          },
+          {
+            "severity": "high",
+            "file": "share/scripts/s_fader_automation.lua",
+            "line": 23,
+            "cwe": "CWE-95",
+            "snippet": "local g = al:eval (playhead)"
+          },
+          {
+            "severity": "high",
+            "file": "share/scripts/s_plugin_automation.lua",
+            "line": 20,
+            "cwe": "CWE-95",
+            "snippet": "print (\"Current value\", cl:eval (playhead))"
+          },
+          {
+            "severity": "high",
+            "file": "share/scripts/s_region_envelope.lua",
+            "line": 23,
+            "cwe": "CWE-95",
+            "snippet": "print (\"Value at 3sec\", al:eval(Temporal.timepos_t(Session:nominal_sample_rate () * 3)))"
+          },
+          {
+            "severity": "high",
+            "file": "share/scripts/_system_exec.lua",
+            "line": 17,
+            "cwe": "CWE-95",
+            "snippet": "-- argument separately to exec (and needs a full-path to the binary)."
+          },
+          {
+            "severity": "high",
+            "file": "luasession/luasession.cc",
+            "line": 508,
+            "cwe": "CWE-120",
+            "snippet": "strcat (line, \"\\n\");"
+          },
+          {
+            "severity": "high",
+            "file": "libs/vst3/pluginterfaces/vst/ivstrepresentation.h",
+            "line": 51,
+            "cwe": "CWE-120",
+            "snippet": "strcpy (vendor,\t_vendor);"
+          },
+          {
+            "severity": "high",
+            "file": "libs/vst3/pluginterfaces/base/funknown.cpp",
+            "line": 304,
+            "cwe": "CWE-120",
+            "snippet": "sprintf (string, \"%08X%04X%04X%s\", g->Data1, g->Data2, g->Data3, s);"
+          },
+          {
+            "severity": "high",
+            "file": "libs/vamp-plugins/BarBeatTrack.cpp",
+            "line": 460,
+            "cwe": "CWE-120",
+            "snippet": "sprintf(label, \"%d\", beat + 1);"
+          },
+          {
+            "severity": "high",
+            "file": "libs/vamp-plugins/BeatTrack.cpp",
+            "line": 463,
+            "cwe": "CWE-120",
+            "snippet": "sprintf(label, \"%.2f bpm\", bpm);"
+          },
+          {
+            "severity": "high",
+            "file": "libs/vamp-plugins/SimilarityPlugin.cpp",
+            "line": 763,
+            "cwe": "CWE-120",
+            "snippet": "sprintf(labelBuffer, \"Means for channel %d\", i+1);"
+          },
+          {
+            "severity": "high",
+            "file": "libs/tk/ytkmm/listviewtext.cc",
+            "line": 61,
+            "cwe": "CWE-120",
+            "snippet": "sprintf(column_title, \"%d\", i);"
+          },
+          {
+            "severity": "high",
+            "file": "libs/tk/ytk/gtkaccelgroup.c",
+            "line": 1364,
+            "cwe": "CWE-120",
+            "snippet": "strcpy (accelerator + l, text_release);"
+          },
+          {
+            "severity": "high",
+            "file": "libs/tk/ytk/gtkfilechooserdefault.c",
+            "line": 6629,
+            "cwe": "CWE-120",
+            "snippet": "sprintf (charset, \"CP%u\", (guint) codepage);"
+          },
+          {
+            "severity": "high",
+            "file": "libs/tk/ytk/gtkmain.c",
+            "line": 499,
+            "cwe": "CWE-120",
+            "snippet": "strcpy (locale, language);"
+          },
+          {
+            "severity": "high",
+            "file": "libs/tk/ytk/gtkprogress.c",
+            "line": 414,
+            "cwe": "CWE-120",
+            "snippet": "strcat (buf, tmp);"
+          },
+          {
+            "severity": "high",
+            "file": "libs/tk/ytk/gtktreednd.c",
+            "line": 267,
+            "cwe": "CWE-120",
+            "snippet": "strcpy (trd->path, path_str);"
+          }
+        ]
+      },
+      "A04-InsecureDesign": {
+        "count": 818,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "tools/cstyle.py",
+            "line": 36,
+            "cwe": "CWE-",
+            "snippet": "self.define_hack_re = re.compile (\"(#\\s*define\\s+[a-zA-Z0-9_]+)\\(\")"
+          },
+          {
+            "severity": "low",
+            "file": "tools/fmt-luadoc.php",
+            "line": 121,
+            "cwe": "CWE-",
+            "snippet": "# strip class pointers -- TODO Check C'tor for given class"
+          },
+          {
+            "severity": "low",
+            "file": "tools/misc.py",
+            "line": 72,
+            "cwe": "CWE-",
+            "snippet": "# TODO the file path may be incorrect"
+          },
+          {
+            "severity": "low",
+            "file": "tools/thread_readtest.cc",
+            "line": 116,
+            "cwe": "CWE-",
+            "snippet": "/* XXX wait for each thread to finish */"
+          },
+          {
+            "severity": "low",
+            "file": "tools/x-win/package.sh",
+            "line": 43,
+            "cwe": "CWE-",
+            "snippet": "# TODO: grep from build/config.log instead"
+          },
+          {
+            "severity": "low",
+            "file": "tools/videotimeline/vsrv.php",
+            "line": 21,
+            "cwe": "CWE-",
+            "snippet": "# TODO proper CSV encode (possible quotes in docroot)"
+          },
+          {
+            "severity": "low",
+            "file": "tools/signal-test/signal-test.cc",
+            "line": 56,
+            "cwe": "CWE-",
+            "snippet": "f (); // XXX really queue and process during run ()"
+          },
+          {
+            "severity": "low",
+            "file": "tools/sanity_check/systemtest.cpp",
+            "line": 18,
+            "cwe": "CWE-",
+            "snippet": "* TODO: Test for rt prio availability"
+          },
+          {
+            "severity": "low",
+            "file": "tools/gccabicheck/abicheck.c",
+            "line": 28,
+            "cwe": "CWE-",
+            "snippet": "// TODO document error codes,..."
+          },
+          {
+            "severity": "low",
+            "file": "tools/doxy2json/doxy2json.cc",
+            "line": 182,
+            "cwe": "CWE-",
+            "snippet": "// TODO: resolve typedef enum { .. } name;"
+          },
+          {
+            "severity": "low",
+            "file": "tools/bb/bb.cc",
+            "line": 281,
+            "cwe": "CWE-",
+            "snippet": "/* XXX this smooshes together all inbound notes ... tricky */"
+          },
+          {
+            "severity": "low",
+            "file": "share/web_surfaces/builtin/mixer/toolkit/toolkit.js",
+            "line": 497,
+            "cwe": "CWE-",
+            "snippet": "// TODO: fixme"
+          },
+          {
+            "severity": "low",
+            "file": "share/web_surfaces/builtin/mixer/toolkit/widgets/dialog.js",
+            "line": 25,
+            "cwe": "CWE-",
+            "snippet": "// TODO: if a dialog is opened out of a dialog both should avoid"
+          },
+          {
+            "severity": "low",
+            "file": "share/web_surfaces/builtin/mixer/toolkit/widgets/fader.js",
+            "line": 288,
+            "cwe": "CWE-",
+            "snippet": "// TODO: value is snapped already in set(). This is not enough for values which are set during"
+          },
+          {
+            "severity": "low",
+            "file": "share/web_surfaces/builtin/mixer/toolkit/widgets/levelmeter.js",
+            "line": 417,
+            "cwe": "CWE-",
+            "snippet": "/* TODO: lets snap in set() */"
+          },
+          {
+            "severity": "low",
+            "file": "share/web_surfaces/builtin/mixer/toolkit/widgets/meterbase.js",
+            "line": 369,
+            "cwe": "CWE-",
+            "snippet": "/* FIXME: I am not sure why this is even necessary */"
+          },
+          {
+            "severity": "low",
+            "file": "share/web_surfaces/builtin/mixer/toolkit/widgets/multimeter.js",
+            "line": 54,
+            "cwe": "CWE-",
+            "snippet": "// TODO: no destroy function in levelmeter at this point?"
+          },
+          {
+            "severity": "low",
+            "file": "share/web_surfaces/builtin/mixer/toolkit/widgets/pager.js",
+            "line": 321,
+            "cwe": "CWE-",
+            "snippet": "// TODO: not always necessary"
+          },
+          {
+            "severity": "low",
+            "file": "share/web_surfaces/builtin/mixer/toolkit/widgets/sortablelist.js",
+            "line": 22,
+            "cwe": "CWE-",
+            "snippet": "/* TODO */"
+          },
+          {
+            "severity": "low",
+            "file": "share/web_surfaces/builtin/mixer/toolkit/widgets/widget.js",
+            "line": 252,
+            "cwe": "CWE-",
+            "snippet": "// FIXME: fix this whole problem properly"
+          },
+          {
+            "severity": "low",
+            "file": "share/web_surfaces/builtin/mixer/toolkit/modules/circular.js",
+            "line": 77,
+            "cwe": "CWE-",
+            "snippet": "// TODO: consider adding them all at once"
+          },
+          {
+            "severity": "low",
+            "file": "share/web_surfaces/builtin/mixer/toolkit/modules/responsehandle.js",
+            "line": 803,
+            "cwe": "CWE-",
+            "snippet": "/* TODO: move this into the parent */"
+          },
+          {
+            "severity": "low",
+            "file": "share/web_surfaces/builtin/mixer/toolkit/implements/audiomath.js",
+            "line": 221,
+            "cwe": "CWE-",
+            "snippet": "// FIXME: unused"
+          },
+          {
+            "severity": "low",
+            "file": "share/web_surfaces/builtin/mixer/toolkit/implements/base.js",
+            "line": 254,
+            "cwe": "CWE-",
+            "snippet": "/* FIXME:"
+          },
+          {
+            "severity": "low",
+            "file": "share/scripts/barlow_arp.lua",
+            "line": 317,
+            "cwe": "CWE-",
+            "snippet": "-- back to the root meter at each base pulse. XXFIXME: This may"
+          }
+        ]
+      },
+      "A05-SecurityMisconfiguration": {
+        "count": 2,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "tools/autowaf.py",
+            "line": 68,
+            "cwe": "CWE-1188",
+            "snippet": "opt.add_option('--optimize', action='store_false', default=True, dest='debug',"
+          },
+          {
+            "severity": "medium",
+            "file": "tools/define_versions.sh",
+            "line": 56,
+            "cwe": "CWE-489",
+            "snippet": "if grep -q \"DEBUG = True\" ../../build/c4che/_cache.py; then"
+          }
+        ]
+      },
+      "A06-VulnerableComponents": {
+        "count": 0,
+        "findings": []
+      },
+      "A07-AuthFailures": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "gtk2_ardour/sfdb_freesound_mootcher.cc",
+            "line": 74,
+            "cwe": "CWE-798",
+            "snippet": "static const std::string default_token = \"Dwfk4N2CheXTZw5WzRBrgVEIusIMWxnBY4W2BUVl\";"
+          }
+        ]
+      },
+      "A08-SoftwareDataIntegrity": {
+        "count": 297,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "tools/fmt-bindings.py",
+            "line": 495,
+            "cwe": "CWE-319",
+            "snippet": "http://manual.ardour.org"
+          },
+          {
+            "severity": "low",
+            "file": "tools/fmt-luadoc.php",
+            "line": 797,
+            "cwe": "CWE-319",
+            "snippet": "<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en\" xml:lang=\"en\">"
+          },
+          {
+            "severity": "low",
+            "file": "tools/update_lv2stack.sh",
+            "line": 37,
+            "cwe": "CWE-319",
+            "snippet": "DEFMOD=\"$DEFMOD\\ndefmod $PROJ $PROJ ${VER}-g${REV}${SUF} http://ardour.org/files/deps/ bz2 ${PROJ}-${VER}\""
+          },
+          {
+            "severity": "low",
+            "file": "tools/x-win/package.sh",
+            "line": 272,
+            "cwe": "CWE-319",
+            "snippet": "HARVID_VERSION=$(curl ${CURLOPT} http://ardour.org/files/video-tools/harvid_version.txt)"
+          },
+          {
+            "severity": "low",
+            "file": "tools/videotimeline/install_video_tools.sh",
+            "line": 133,
+            "cwe": "CWE-319",
+            "snippet": "HARVID_VERSION=$(curl -s http://ardour.org/files/video-tools/harvid_version.txt)"
+          },
+          {
+            "severity": "low",
+            "file": "tools/omf/loader.cc",
+            "line": 14,
+            "cwe": "CWE-319",
+            "snippet": "http://www.reaper.fm/sdk/plugin/plugin.php#ext_dl"
+          },
+          {
+            "severity": "low",
+            "file": "tools/omf/omftool.cc",
+            "line": 14,
+            "cwe": "CWE-319",
+            "snippet": "http://www.reaper.fm/sdk/plugin/plugin.php#ext_dl"
+          },
+          {
+            "severity": "low",
+            "file": "tools/icons/icon.cc",
+            "line": 15,
+            "cwe": "CWE-319",
+            "snippet": "* along with this program. If not, see <http://www.gnu.org/licenses/>."
+          },
+          {
+            "severity": "low",
+            "file": "tools/gccabicheck/abicheck.c",
+            "line": 7,
+            "cwe": "CWE-319",
+            "snippet": "* http://www.wtfpl.net/ for more details."
+          },
+          {
+            "severity": "low",
+            "file": "tools/doxy2json/doxy2json.cc",
+            "line": 16,
+            "cwe": "CWE-319",
+            "snippet": "* along with this program.  If not, see <http://www.gnu.org/licenses/>."
+          },
+          {
+            "severity": "low",
+            "file": "share/web_surfaces/builtin/mixer/toolkit/toolkit.js",
+            "line": 883,
+            "cwe": "CWE-319",
+            "snippet": "var el = document.createElementNS('http://www.w3.org/2000/svg', \"svg:\" + tag);"
+          },
+          {
+            "severity": "low",
+            "file": "share/web_surfaces/builtin/mixer/toolkit/polyfill/raf.js",
+            "line": 3,
+            "cwe": "CWE-319",
+            "snippet": "// http://paulirish.com/2011/requestanimationframe-for-smart-animating/"
+          },
+          {
+            "severity": "low",
+            "file": "share/web_surfaces/builtin/mixer/toolkit/implements/gradient.js",
+            "line": 76,
+            "cwe": "CWE-319",
+            "snippet": "//         background: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><linearGradient id='gradient'><stop offset='10%' stop-color='#F00"
+          },
+          {
+            "severity": "low",
+            "file": "share/web_surfaces/builtin/mixer/js/tkloader.js",
+            "line": 21,
+            "cwe": "CWE-319",
+            "snippet": "// GPLv3 license, docs at http://docs.deuso.de/Toolkit/"
+          },
+          {
+            "severity": "low",
+            "file": "share/scripts/amp5.lua",
+            "line": 81,
+            "cwe": "CWE-319",
+            "snippet": "--http://manual.ardour.org/lua-scripting/class_reference/#Cairo:PangoLayout"
+          },
+          {
+            "severity": "low",
+            "file": "share/scripts/a_slow_mute.lua",
+            "line": 36,
+            "cwe": "CWE-319",
+            "snippet": "-- \"ins\" and \"outs\" are http://manual.ardour.org/lua-scripting/class_reference/#C:FloatArray"
+          },
+          {
+            "severity": "low",
+            "file": "share/scripts/bounce_replace.lua",
+            "line": 22,
+            "cwe": "CWE-319",
+            "snippet": "-- http://manual.ardour.org/lua-scripting/class_reference/#ArdourUI:Selection"
+          },
+          {
+            "severity": "low",
+            "file": "share/scripts/collapse_playlists.lua",
+            "line": 9,
+            "cwe": "CWE-319",
+            "snippet": "-- http://manual.ardour.org/lua-scripting/class_reference/#ArdourUI:Selection"
+          },
+          {
+            "severity": "low",
+            "file": "share/scripts/HiAndLowPass.lua",
+            "line": 109,
+            "cwe": "CWE-319",
+            "snippet": "-- http://manual.ardour.org/lua-scripting/class_reference/#ARDOUR:DSP:Biquad"
+          },
+          {
+            "severity": "low",
+            "file": "share/scripts/new_clean_playlists.lua",
+            "line": 9,
+            "cwe": "CWE-319",
+            "snippet": "-- http://manual.ardour.org/lua-scripting/class_reference/#ArdourUI:Selection"
+          },
+          {
+            "severity": "low",
+            "file": "share/scripts/notch_bank.lua",
+            "line": 76,
+            "cwe": "CWE-319",
+            "snippet": "--   http://manual.ardour.org/lua-scripting/class_reference/#C:FloatArray"
+          },
+          {
+            "severity": "low",
+            "file": "share/scripts/periodic_backup.lua",
+            "line": 9,
+            "cwe": "CWE-319",
+            "snippet": "-- http://manual.ardour.org/lua-scripting/class_reference/#LuaSignal.LuaSignal"
+          },
+          {
+            "severity": "low",
+            "file": "share/scripts/pitch_to_mts.lua",
+            "line": 117,
+            "cwe": "CWE-319",
+            "snippet": "-- http://technogems.blogspot.com/2018/07/using-midi-tuning-specification-mts.html"
+          },
+          {
+            "severity": "low",
+            "file": "share/scripts/post_export_save_hook.lua",
+            "line": 9,
+            "cwe": "CWE-319",
+            "snippet": "-- http://manual.ardour.org/lua-scripting/class_reference/#LuaSignal.LuaSignal"
+          },
+          {
+            "severity": "low",
+            "file": "share/scripts/remove_unknown_procs.lua",
+            "line": 10,
+            "cwe": "CWE-319",
+            "snippet": "-- route is-a http://manual.ardour.org/lua-scripting/class_reference/#ARDOUR:Route"
+          }
+        ]
+      },
+      "A09-LoggingMonitoringFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A10-SSRF": {
+        "count": 8,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "libs/tk/ytk/gtkwindow.c",
+            "line": 6343,
+            "cwe": "CWE-601",
+            "snippet": "/* Directly size allocate for override redirect (popup) windows. */"
+          },
+          {
+            "severity": "low",
+            "file": "libs/tk/ydkmm/window.cc",
+            "line": 430,
+            "cwe": "CWE-601",
+            "snippet": "void Window::set_override_redirect(bool override_redirect)"
+          },
+          {
+            "severity": "low",
+            "file": "libs/tk/ydkmm/ydkmm/window.h",
+            "line": 1007,
+            "cwe": "CWE-601",
+            "snippet": "void set_override_redirect(bool override_redirect =  true);"
+          },
+          {
+            "severity": "low",
+            "file": "libs/tk/ydk/gdkwindow.c",
+            "line": 4644,
+            "cwe": "CWE-601",
+            "snippet": "gdk_window_clear_backing_region_redirect (GdkWindow *window,"
+          },
+          {
+            "severity": "low",
+            "file": "libs/tk/ydk/ydk/gdkwindow.h",
+            "line": 386,
+            "cwe": "CWE-601",
+            "snippet": "void          gdk_window_set_override_redirect (GdkWindow     *window,"
+          },
+          {
+            "severity": "low",
+            "file": "libs/tk/ydk/x11/gdkwindow-x11.c",
+            "line": 2367,
+            "cwe": "CWE-601",
+            "snippet": "* has been turned on via gdk_window_set_override_redirect()"
+          },
+          {
+            "severity": "low",
+            "file": "libs/tk/ydk/win32/gdkwindow-win32.c",
+            "line": 2940,
+            "cwe": "CWE-601",
+            "snippet": "gdk_window_set_override_redirect (GdkWindow *window,"
+          },
+          {
+            "severity": "low",
+            "file": "libs/tk/ydk/quartz/gdkwindow-quartz.c",
+            "line": 2086,
+            "cwe": "CWE-601",
+            "snippet": "gdk_window_set_override_redirect (GdkWindow *window,"
+          }
+        ]
+      }
+    }
+  },
+  "owasp_llm_top10": {
+    "total_findings": 28,
+    "files_with_findings": 28,
+    "severity": {
+      "high": 1,
+      "medium": 0,
+      "low": 27
+    },
+    "categories": {
+      "LLM01-PromptInjection": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM02-SensitiveInfoDisclosure": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM03-SupplyChain": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM04-DataPoisoning": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM05-ImproperOutputHandling": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM06-ExcessiveAgency": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "gtk2_ardour/ardour_ui.h",
+            "line": 350,
+            "cwe": "CWE-862",
+            "snippet": "void stop_video_server (bool ask_confirm=false);"
+          }
+        ]
+      },
+      "LLM07-SystemPromptLeak": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM08-VectorEmbeddingWeaknesses": {
+        "count": 27,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "share/web_surfaces/builtin/mixer/toolkit/widgets/colors.js",
+            "line": 110,
+            "cwe": "CWE-",
+            "snippet": "h = s = 0; // achromatic"
+          },
+          {
+            "severity": "low",
+            "file": "libs/vst3/pluginterfaces/vst/vstpresetkeys.h",
+            "line": 89,
+            "cwe": "CWE-",
+            "snippet": "const CString kChromaticPerc\t\t= \"Chromatic Perc\";"
+          },
+          {
+            "severity": "low",
+            "file": "libs/vamp-plugins/ChromagramPlugin.cpp",
+            "line": 15,
+            "cwe": "CWE-",
+            "snippet": "#include \"ChromagramPlugin.h\""
+          },
+          {
+            "severity": "low",
+            "file": "libs/vamp-plugins/ChromagramPlugin.h",
+            "line": 15,
+            "cwe": "CWE-",
+            "snippet": "#ifndef _CHROMAGRAM_PLUGIN_H_"
+          },
+          {
+            "severity": "low",
+            "file": "libs/vamp-plugins/KeyDetect.cpp",
+            "line": 105,
+            "cwe": "CWE-",
+            "snippet": "desc.unit = \"chroma frames\";"
+          },
+          {
+            "severity": "low",
+            "file": "libs/vamp-plugins/plugins.cpp",
+            "line": 47,
+            "cwe": "CWE-",
+            "snippet": "#include \"ChromagramPlugin.h\""
+          },
+          {
+            "severity": "low",
+            "file": "libs/vamp-plugins/SimilarityPlugin.cpp",
+            "line": 21,
+            "cwe": "CWE-",
+            "snippet": "#include \"dsp/chromagram/Chromagram.h\""
+          },
+          {
+            "severity": "low",
+            "file": "libs/vamp-plugins/SimilarityPlugin.h",
+            "line": 25,
+            "cwe": "CWE-",
+            "snippet": "class Chromagram;"
+          },
+          {
+            "severity": "low",
+            "file": "libs/vamp-plugins/TonalChangeDetect.cpp",
+            "line": 18,
+            "cwe": "CWE-",
+            "snippet": "#include <dsp/chromagram/Chromagram.h>"
+          },
+          {
+            "severity": "low",
+            "file": "libs/vamp-plugins/TonalChangeDetect.h",
+            "line": 20,
+            "cwe": "CWE-",
+            "snippet": "#include <dsp/chromagram/Chromagram.h>"
+          },
+          {
+            "severity": "low",
+            "file": "libs/surfaces/push2/push2.cc",
+            "line": 1177,
+            "cwe": "CWE-",
+            "snippet": "Push2::set_pad_scale_chromatic (const int               scale_root,"
+          },
+          {
+            "severity": "low",
+            "file": "libs/surfaces/push2/push2.h",
+            "line": 337,
+            "cwe": "CWE-",
+            "snippet": "* The comments describe the ideal interval that is used in chromatic mode."
+          },
+          {
+            "severity": "low",
+            "file": "libs/surfaces/push2/scale.cc",
+            "line": 109,
+            "cwe": "CWE-",
+            "snippet": "_chromatic_text = new Text (this);"
+          },
+          {
+            "severity": "low",
+            "file": "libs/surfaces/push2/scale.h",
+            "line": 63,
+            "cwe": "CWE-",
+            "snippet": "ArdourCanvas::Text* _chromatic_text;"
+          },
+          {
+            "severity": "low",
+            "file": "libs/qm-dsp/dsp/tonal/TonalEstimator.cpp",
+            "line": 89,
+            "cwe": "CWE-",
+            "snippet": "TCSVector TonalEstimator::transform2TCS(const ChromaVector& rVector)"
+          },
+          {
+            "severity": "low",
+            "file": "libs/qm-dsp/dsp/tonal/TonalEstimator.h",
+            "line": 25,
+            "cwe": "CWE-",
+            "snippet": "class ChromaVector : public std::valarray<double>"
+          },
+          {
+            "severity": "low",
+            "file": "libs/qm-dsp/dsp/keydetection/GetKeyMode.cpp",
+            "line": 50,
+            "cwe": "CWE-",
+            "snippet": "m_ChromaBuffer(0),"
+          },
+          {
+            "severity": "low",
+            "file": "libs/qm-dsp/dsp/keydetection/GetKeyMode.h",
+            "line": 17,
+            "cwe": "CWE-",
+            "snippet": "#include \"dsp/chromagram/Chromagram.h\""
+          },
+          {
+            "severity": "low",
+            "file": "libs/qm-dsp/dsp/chromagram/Chromagram.cpp",
+            "line": 19,
+            "cwe": "CWE-",
+            "snippet": "#include \"Chromagram.h\""
+          },
+          {
+            "severity": "low",
+            "file": "libs/qm-dsp/dsp/chromagram/Chromagram.h",
+            "line": 16,
+            "cwe": "CWE-",
+            "snippet": "#ifndef CHROMAGRAM_H"
+          },
+          {
+            "severity": "low",
+            "file": "libs/gtkmm2ext/colors.cc",
+            "line": 451,
+            "cwe": "CWE-",
+            "snippet": "/* human color perception of achromatics generates about 450"
+          },
+          {
+            "severity": "low",
+            "file": "libs/gtkmm2ext/colorspace.cc",
+            "line": 227,
+            "cwe": "CWE-",
+            "snippet": "* @brief Convert sRGB to NTSC/PAL Y'UV Luma + Chroma"
+          },
+          {
+            "severity": "low",
+            "file": "libs/ardour/scale.cc",
+            "line": 86,
+            "cwe": "CWE-",
+            "snippet": "register_scale (TwelveTone, _(\"Chromatic\"), PitchClass, { 1,2,3,4,5,6,7,8,9,10,11 });"
+          },
+          {
+            "severity": "low",
+            "file": "libs/ardour/ardour/scale.h",
+            "line": 49,
+            "cwe": "CWE-",
+            "snippet": "Chromatic,"
+          },
+          {
+            "severity": "low",
+            "file": "libs/aaf/AAFToText.c",
+            "line": 1007,
+            "cwe": "CWE-",
+            "snippet": "if (aafUIDCmp (auid, &AAFOperationDef_VideoChromaKey))"
+          }
+        ]
+      },
+      "LLM09-Misinformation": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM10-UnboundedConsumption": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "sbom": {
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.5",
+    "serialNumber": "urn:uuid:1552fd18-5e36-5d1d-8a0a-6fe1307752de",
+    "version": 1,
+    "metadata": {
+      "timestamp": "2026-10-06T07:49:47Z",
+      "component": {
+        "type": "application",
+        "name": "ARDOUR",
+        "version": "bf679081bafa",
+        "bom-ref": "pkg:generic/anticloud/ARDOUR@bf679081bafa",
+        "purl": "pkg:generic/anticloud/ARDOUR@bf679081bafa",
+        "licenses": [
+          {
+            "license": {
+              "id": "GPL-2.0"
+            }
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "anticloud:source-commit",
+          "value": "bf679081bafabf1bc16ee1f8ae8d01503ffe013e"
+        },
+        {
+          "name": "anticloud:source-url",
+          "value": "https://github.com/ardour/ardour"
+        },
+        {
+          "name": "anticloud:tier",
+          "value": "tier-agent"
+        }
+      ]
+    },
+    "components": []
+  },
+  "elapsed_seconds": 370.17
+}
